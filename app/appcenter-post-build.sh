@@ -16,8 +16,8 @@ then
 #-F notify='on' #-F 'release_notes=$COMMIT_MESSAGE'
 -F tags=‘appcntr, ios’
 else
-fi
-fi
+#fi
+#fi
 if [[ -z "$APPCENTER_XCODE_PROJECT" ]]; 
 then
 if [ "$APPCENTER_BRANCH" == "android/staging" ]; 
@@ -29,5 +29,5 @@ curl https://upload.testfairy.com/api/upload \
 #-F testers_groups='internal_android' \
 #-F notify='on' #-F 'release_notes=$COMMIT_MESSAGE'
 -F tags=‘appcntr,android’
-fi
-fi
+#fi
+#fi
