@@ -3,9 +3,11 @@
 ENVIRONMENT=Development APP_NAME=DMAF/DMAF-Mobile
 # Get the message of the last commit using Git
 COMMIT_MESSAGE=$(git log -1 HEAD --pretty=format:%s)
-if [[ "$APPCENTER_XCODE_PROJECT" ]]; then
+if [[ "$APPCENTER_XCODE_PROJECT" ]]; 
+then
 $APPCENTER_OUTPUT_DIRECTORY/symbols/
-if [ "$APPCENTER_BRANCH" == "ios/staging" ]; then
+if [ "$APPCENTER_BRANCH" == "ios/staging" ]; 
+then
 -F "api_key=$TESTFAIRY_UPLOAD_API_KEY" \
 -F "file=@$APPCENTER_OUTPUT_DIRECTORY/dmaf.ipa" \
 -F "symbols_file=@$APPCENTER_OUTPUT_DIRECTORY/symbols/dmaf.dsym" \
@@ -15,8 +17,10 @@ if [ "$APPCENTER_BRANCH" == "ios/staging" ]; then
 # else
 fi
 fi
-if [[ -z "$APPCENTER_XCODE_PROJECT" ]]; then
-if [ "$APPCENTER_BRANCH" == "android/staging" ]; then
+if [[ -z "$APPCENTER_XCODE_PROJECT" ]]; 
+then
+if [ "$APPCENTER_BRANCH" == "android/staging" ]; 
+then
 curl https://upload.testfairy.com/api/upload \
 -F "api_key=$TESTFAIRY_UPLOAD_API_KEY" \
 -F "file=@$APPCENTER_OUTPUT_DIRECTORY/app-staging.apk" \
