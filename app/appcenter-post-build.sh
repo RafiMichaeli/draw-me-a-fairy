@@ -9,12 +9,12 @@
 \pard\pardeftab720\partightenfactor0
 
 \f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 #!/usr/bin/env bash\cb1 \
+#!/usr/bin/env bash\cb1 \
 \cb3 # Release version per env\cb1 \
 \cb3 ENVIRONMENT=Development\cb1 \uc0\u8232 \cb3 APP_NAME=DMAF/DMAF-Mobile\cb1 \
 \cb3 # Get the message of the last commit using Git\cb1 \uc0\u8232 \cb3 COMMIT_MESSAGE=$(git log -1 HEAD --pretty=format:%s)\cb1 \
 \cb3 if [[ "$APPCENTER_XCODE_PROJECT" ]]; then\cb1 \
 \cb3 $APPCENTER_OUTPUT_DIRECTORY/symbols/\cb1 \
-\cb3 if [ "$APPCENTER_BRANCH" == "ios/staging" ]; then\cb1 \uc0\u8232 \cb3 -F "api_key=$TESTFAIRY_UPLOAD_API_KEY" \\\cb1 \uc0\u8232 \cb3 -F "file=@$APPCENTER_OUTPUT_DIRECTORY/HoneyBookMobile.ipa" \\\cb1 \uc0\u8232 \cb3 -F "symbols_file=@$APPCENTER_OUTPUT_DIRECTORY/symbols/HoneyBookMobile.dsym" \\\cb1 \uc0\u8232 \cb3 -F testers_groups='internal_ios' \\\cb1 \uc0\u8232 \cb3 -F notify='on'\cb1 \uc0\u8232 \cb3 -F 'release_notes=$COMMIT_MESSAGE'\cb1 \uc0\u8232 \cb3 -F tags='staging, english'\cb1 \uc0\u8232 \cb3 # else\cb1 \uc0\u8232 \cb3 fi\cb1 \uc0\u8232 \cb3 fi\cb1 \uc0\u8232 \cb3 if [[ -z "$APPCENTER_XCODE_PROJECT" ]]; then\cb1 \
-\cb3 if [ "$APPCENTER_BRANCH" == "android/staging" ]; then\cb1 \uc0\u8232 \cb3 curl\'a0{\field{\*\fldinst{HYPERLINK "https://upload.testfairy.com/api/upload"}}{\fldrslt \cf4 \ul \ulc4 \strokec4 https://upload.testfairy.com/api/upload}}\'a0\\\cb1 \uc0\u8232 \cb3 -F "api_key=$TESTFAIRY_UPLOAD_API_KEY" \\\cb1 \uc0\u8232 \cb3 -F "file=@$APPCENTER_OUTPUT_DIRECTORY/app-staging.apk" \\\cb1 \uc0\u8232 \cb3 # -F symbols_file=@sample_mapping.txt \\\cb1 \uc0\u8232 \cb3 -F testers_groups='internal_android' \\\cb1 \uc0\u8232 \cb3 -F notify='on'\cb1 \uc0\u8232 \cb3 -F 'release_notes=$COMMIT_MESSAGE'\cb1 \uc0\u8232 \cb3 -F tags='staging, english'\cb1 \uc0\u8232 \cb3 fi\cb1 \uc0\u8232 \cb3 fi\cb1 \
+\cb3 if [ "$APPCENTER_BRANCH" == "ios/staging" ]; then\cb1 \uc0\u8232 \cb3 -F "api_key=$TESTFAIRY_UPLOAD_API_KEY" \\\cb1 \uc0\u8232 \cb3 -F "file=@$APPCENTER_OUTPUT_DIRECTORY/dmaf.ipa" \\\cb1 \uc0\u8232 \cb3 -F "symbols_file=@$APPCENTER_OUTPUT_DIRECTORY/symbols/dmaf.dsym" \\\cb1 \uc0\u8232 \cb3 #-F testers_groups='internal_ios' \\\cb1 \uc0\u8232 \cb3 #-F notify='on'\cb1 \uc0\u8232 \cb3 #-F 'release_notes=$COMMIT_MESSAGE'\cb1 \uc0\u8232 \cb3 -F tags=\'91appcntr, ios\'92\cb1 \uc0\u8232 \cb3 # else\cb1 \uc0\u8232 \cb3 fi\cb1 \uc0\u8232 \cb3 fi\cb1 \uc0\u8232 \cb3 if [[ -z "$APPCENTER_XCODE_PROJECT" ]]; then\cb1 \
+\cb3 if [ "$APPCENTER_BRANCH" == "android/staging" ]; then\cb1 \uc0\u8232 \cb3 curl\'a0{\field{\*\fldinst{HYPERLINK "https://upload.testfairy.com/api/upload"}}{\fldrslt \cf4 \ul \ulc4 https://upload.testfairy.com/api/upload}}\'a0\\\cb1 \uc0\u8232 \cb3 -F "api_key=$TESTFAIRY_UPLOAD_API_KEY" \\\cb1 \uc0\u8232 \cb3 -F "file=@$APPCENTER_OUTPUT_DIRECTORY/app-staging.apk" \\\cb1 \uc0\u8232 \cb3 # -F symbols_file=@sample_mapping.txt \\\cb1 \uc0\u8232 \cb3 #-F testers_groups='internal_android' \\\cb1 \uc0\u8232 \cb3 #-F notify='on'\cb1 \uc0\u8232 \cb3 #-F 'release_notes=$COMMIT_MESSAGE'\cb1 \uc0\u8232 \cb3 -F tags=\'91appcntr,android\'92\cb1 \uc0\u8232 \cb3 fi\cb1 \uc0\u8232 \cb3 fi\cb1 \
 }
