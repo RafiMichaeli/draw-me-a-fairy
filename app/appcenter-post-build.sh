@@ -2,8 +2,8 @@
 
 # Release version per env
 
-#ENVIRONMENT=Development
-#APP_NAME=HoneyBook/HoneyBook-Mobile
+ENVIRONMENT=Development
+APP_NAME=DMAF/draw-me-a-fairy
 
 # Get the message of the last commit using Git
 COMMIT_MESSAGE=$(git log -1 HEAD --pretty=format:%s)
@@ -18,7 +18,7 @@ if [ "$APPCENTER_BRANCH" == "ios/staging" ]; then
 -F "symbols_file=@$APPCENTER_OUTPUT_DIRECTORY/symbols/draw-me-a-fairy.dsym" \
 #-F testers_groups='internal_ios' \
 #-F notify='on'
-#-F 'release_notes=$COMMIT_MESSAGE'
+-F 'release_notes=$COMMIT_MESSAGE'
 -F tags='appcntr, ios'
 # else
 fi
@@ -31,7 +31,7 @@ curl https://upload.testfairy.com/api/upload \
 # -F symbols_file=@sample_mapping.txt \
 #-F testers_groups='internal_android' \
 #-F notify='on'
-#-F 'release_notes=$COMMIT_MESSAGE'
+-F 'release_notes=$COMMIT_MESSAGE'
 -F tags='appcntr, android'
 fi
 fi
