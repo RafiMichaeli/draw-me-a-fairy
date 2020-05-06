@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-TESTFAIRY_UPLOAD_API_KEY='2b7c2001126cbbfb221535b6e0d3728f2bf5d9f3'
+TESTFAIRY_UPLOAD_API_KEY=2b7c2001126cbbfb221535b6e0d3728f2bf5d9f3
 
 if [[ "$APPCENTER_XCODE_PROJECT" ]]; then
   curl https://upload.testfairy.com/api/upload \
